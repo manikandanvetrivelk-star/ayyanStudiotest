@@ -1,0 +1,98 @@
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.lightbox--open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Image ── */
+.lightbox__img {
+  max-width: 90vw;
+  max-height: 84vh;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transform: scale(0.96);
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.lightbox--open .lightbox__img {
+  transform: scale(1);
+}
+
+/* ── Close button ── */
+.lightbox__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.38rem 0.8rem;
+  transition: border-color var(--transition-base), color var(--transition-base);
+}
+.lightbox__close:hover {
+  border-color: var(--fg-muted);
+  color: var(--fg);
+}
+
+/* ── Prev / Next arrows ── */
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-size: 1.4rem;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition-base), color var(--transition-base);
+}
+.lightbox__nav:hover {
+  border-color: var(--fg-muted);
+  color: var(--fg);
+}
+.lightbox__nav--prev { left: 1.5rem; }
+.lightbox__nav--next { right: 1.5rem; }
+
+/* ── Metadata strip ── */
+.lightbox__meta {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+}
+.lightbox__location {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--fg);
+}
+.lightbox__exif {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.58rem;
+  color: var(--fg-muted);
+  letter-spacing: 0.1em;
+}

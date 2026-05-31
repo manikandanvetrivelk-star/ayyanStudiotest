@@ -1,0 +1,60 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  background: rgba(13,10,7,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__logo { display: flex; flex-direction: column; gap: 1px; }
+.navbar__logo-main {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--gold-light);
+  line-height: 1;
+}
+.navbar__logo-sub {
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+}
+
+.navbar__views {
+  display: flex;
+  gap: 0.25rem;
+}
+.navbar__tab {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--fg-muted);
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  transition: color var(--transition-base), background var(--transition-base);
+}
+.navbar__tab:hover { color: var(--fg); }
+.navbar__tab--active {
+  color: var(--gold);
+  background: rgba(201,168,92,0.08);
+}
+
+.navbar__cta {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--bg);
+  background: var(--gold);
+  padding: 0.45rem 1.1rem;
+  border-radius: 2px;
+  transition: background var(--transition-base), opacity var(--transition-base);
+}
+.navbar__cta:hover { background: var(--gold-light); }

@@ -1,0 +1,142 @@
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+}
+
+.booking-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 10, 7, 0.78);
+  backdrop-filter: blur(10px);
+}
+
+.booking-modal__panel {
+  position: relative;
+  width: min(520px, calc(100% - 2rem));
+  background: rgba(19, 16, 9, 0.98);
+  border: 1px solid rgba(201, 168, 92, 0.15);
+  border-radius: 18px;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.28);
+  padding: 2rem;
+  z-index: 1;
+}
+
+.booking-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: rgba(245, 237, 224, 0.08);
+  color: var(--fg);
+  font-size: 1.4rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: background var(--transition-base);
+}
+
+.booking-modal__close:hover {
+  background: rgba(201, 168, 92, 0.2);
+}
+
+.booking-modal__header h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin: 0.35rem 0 0.65rem;
+  line-height: 1.05;
+}
+
+.booking-modal__header p {
+  color: var(--fg-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.booking-modal__form {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.booking-modal__label {
+  display: grid;
+  gap: 0.5rem;
+  color: var(--fg);
+  font-size: 0.9rem;
+}
+
+.booking-modal__input {
+  width: 100%;
+  border-radius: 0.55rem;
+  border: 1px solid rgba(245, 237, 224, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--fg);
+  padding: 0.95rem 1rem;
+  font-size: 0.95rem;
+}
+
+.booking-modal__input:focus {
+  outline: 1px solid rgba(201, 168, 92, 0.85);
+  outline-offset: 2px;
+}
+
+.booking-modal__submit {
+  margin-top: 0.5rem;
+  width: fit-content;
+  background: var(--gold);
+  color: var(--bg);
+  padding: 0.95rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: transform var(--transition-base), background var(--transition-base);
+}
+
+.booking-modal__submit:hover {
+  transform: translateY(-1px);
+  background: var(--gold-light);
+}
+
+/* Scrollbar styling for modal */
+.booking-modal-scroll {
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Chrome, Safari and Opera scrollbar */
+.booking-modal-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.booking-modal-scroll::-webkit-scrollbar-track {
+  background: rgba(201, 168, 92, 0.08);
+  border-radius: 4px;
+  margin: 0.5rem 0;
+}
+
+.booking-modal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 92, 0.6);
+  border-radius: 4px;
+  border: 2px solid rgba(15, 11, 8, 0.5);
+}
+
+.booking-modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 168, 92, 0.9);
+}
+
+.booking-modal-scroll::-webkit-scrollbar-thumb:active {
+  background: rgba(201, 168, 92, 1);
+}
+
+/* Firefox scrollbar */
+.booking-modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201, 168, 92, 0.6) rgba(201, 168, 92, 0.08);
+}

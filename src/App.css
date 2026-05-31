@@ -1,0 +1,12 @@
+.app {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Push content below the fixed navbar */
+.app__main {
+  padding-top: 62px;
+  flex: 1;
+}

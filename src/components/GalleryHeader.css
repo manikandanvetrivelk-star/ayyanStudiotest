@@ -1,0 +1,14 @@
+.gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.gallery-header__count {
+  font-size: 0.58rem;
+  color: var(--fg-dim);
+  letter-spacing: 0.1em;
+}

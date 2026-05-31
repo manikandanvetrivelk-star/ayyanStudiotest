@@ -1,0 +1,79 @@
+.map-view__wrapper {
+  padding: 0 2rem 5rem;
+}
+
+.map-view__list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Each row ── */
+.map-view__row {
+  display: grid;
+  grid-template-columns: 52px 1fr 230px;
+  align-items: center;
+  gap: 0;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background var(--transition-base);
+  outline: none;
+}
+.map-view__row:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+.map-view__row:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: -1px;
+}
+
+/* ── Index number ── */
+.map-view__num {
+  font-size: 0.52rem;
+  color: var(--fg-dim);
+  letter-spacing: 0.16em;
+  text-align: center;
+}
+
+/* ── Thumbnail + location ── */
+.map-view__info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.map-view__thumb {
+  width: 58px;
+  height: 42px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  flex-shrink: 0;
+  transition: filter 0.25s;
+}
+.map-view__row:hover .map-view__thumb {
+  filter: grayscale(60%);
+}
+.map-view__location {
+  font-size: 0.74rem;
+  color: var(--fg);
+  letter-spacing: 0.04em;
+}
+.map-view__date {
+  font-size: 0.56rem;
+  color: var(--fg-muted);
+  margin-top: 0.2rem;
+  letter-spacing: 0.06em;
+}
+
+/* ── EXIF tags ── */
+.map-view__exif {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+.map-view__tag {
+  font-size: 0.5rem;
+  color: var(--fg-muted);
+  letter-spacing: 0.08em;
+  padding: 0.18rem 0.45rem;
+  border: 1px solid var(--border);
+}

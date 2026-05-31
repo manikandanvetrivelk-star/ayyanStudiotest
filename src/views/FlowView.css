@@ -1,0 +1,75 @@
+.flow__wrapper {
+  padding: 0 2rem 5rem;
+}
+
+.flow__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Each photo card ── */
+.flow__item {
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  outline: none;
+}
+.flow__item:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: -1px;
+}
+.flow__item:hover .flow__img {
+  transform: scale(1.025);
+}
+.flow__item:hover .flow__meta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Aspect variants ── */
+.flow__item--tall  .flow__img { max-height: 88vh; }
+.flow__item--wide  .flow__img { max-height: 60vh; }
+.flow__item--square .flow__img { max-height: 72vh; }
+
+.flow__img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+  transition: transform var(--transition-slow);
+}
+
+/* ── Hover metadata ── */
+.flow__meta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 4rem 1.5rem 1.5rem;
+  background: linear-gradient(transparent, rgba(10, 10, 10, 0.88));
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.flow__meta-location {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--fg);
+}
+.flow__meta-date {
+  font-size: 0.58rem;
+  color: var(--fg-muted);
+  margin-top: 0.2rem;
+}
+.flow__exif {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.54rem;
+  color: var(--fg-muted);
+  letter-spacing: 0.08em;
+}

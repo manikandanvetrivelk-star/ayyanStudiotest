@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* Local display font: "Made Tommy"
+   Place font files in `public/fonts/` with these names:
+     - MadeTommy-Regular.woff2
+     - MadeTommy-Regular.woff
+   If you have a different filename, update the paths below accordingly. */
+@font-face {
+  font-family: 'Made Tommy';
+  /* Prefer a locally installed copy; place font files in `public/fonts/` to enable web loading.
+     Example filenames: MadeTommy-Regular.woff2, MadeTommy-Regular.woff */
+  src: local('Made Tommy'), local('MadeTommy');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --bg:           #0d0a07;
+  --bg-card:      #131009;
+  --bg-surface:   #1a1510;
+  --fg:           #f5ede0;
+  --fg-muted:     #9b8b75;
+  --fg-dim:       #3a3028;
+  --gold:         #c9a85c;
+  --gold-light:   #e8d5a3;
+  --gold-dark:    #8b6f35;
+  --rose:         #c4706a;
+  --border:       rgba(201,168,92,0.12);
+  --border-hover: rgba(201,168,92,0.28);
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'DM Sans', system-ui, sans-serif;
+  --font-display: 'Made Tommy', 'Cormorant Garamond', Georgia, serif;
+
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: var(--font-sans); border: none; background: transparent; }
+a { text-decoration: none; color: inherit; }
+
+/* ─── Utilities ─────────────────────────────────────────────────────────────── */
+.fade-in { animation: fadeUp 0.7s ease-out both; }
+.fade-in-delay-1 { animation-delay: 0.12s; }
+.fade-in-delay-2 { animation-delay: 0.26s; }
+.fade-in-delay-3 { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.gold-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  margin: 1.25rem 0;
+  opacity: 0.5;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--fg-dim); border-radius: 2px; }
